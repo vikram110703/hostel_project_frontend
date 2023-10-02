@@ -27,7 +27,7 @@ export const MatchedStudents = () => {
     }, 1000);
 
     return (
-        <Container maxW={"100%"} minH={["100vh", "container.sm"]} m={"0.2rem"} p="0" border={"1px"} display={"flex"} flexDirection={"column"}>
+        <Container maxW={"100%"} minH={["100vh", "container.sm"]} m={"0.2rem"} p="0" display={"flex"} flexDirection={"column"}>
 
             {loading ? <Loader /> :
                 <>
@@ -66,19 +66,18 @@ export const MatchedStudents = () => {
 const StudentCard = ({ name, hostelName, block, roomNo, branch, state, year, enrollmentNo }) => {
     return (
         <VStack w={["11rem", "20rem"]} p={["1.5rem", "2rem"]} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"}
-            m={"0.5rem"}
+            m={"0.8rem"} bgColor={"whiteAlpha.500"}
             css={{
                 "&:hover": {
-                    transform: "scale(1.1)"
+                    transform: "scale(1.07)"
                 },
             }
             }
         >
-            {/* <Image src={img} w={["3rem", "5rem"]} h={["3rem", "5rem"]} objectFit={"contain"} alt={"Exchange"} /> */}
             <Avatar size={["md", "lg"]} name={name} src="url_to_avatar_image.jpg">
                 <AvatarBadge boxSize="1.25rem" bg="green.500" />
             </Avatar>
-            <Heading size={["sm", "md"]} noOfLines={1} >
+            <Heading size={["sm", "md"]} noOfLines={1} color="blue.300" >
                 {name.toUpperCase()}
             </Heading>
             <Text fontSize={["lg", "xl"]} fontWeight={"medium"} noOfLines={1} >Hostel : {hostelName}</Text>

@@ -7,6 +7,8 @@ import {
     Select,
     Button,
     Text,
+    Stack,
+    Container,
 } from '@chakra-ui/react';
 import axios from 'axios';
 
@@ -74,10 +76,12 @@ const Home = () => {
 
     return (
         <Box bgColor="blue.200" css={{ backgroundColor: "#C2D4E7" }} minH={"container.sm"}>
-            <HStack maxW={"container.xl"} minH={"container.sm"} px={0.2} py={0.5}>
-                <div style={{ backgroundColor: 'white', borderWidth: '1px', borderColor: 'black', borderRadius: "0 0.5rem 0.5rem 0 ", padding: '0.8rem', paddingInline: "1.5rem", maxWidth: "50%", minWidth: "40%" }}  >
+            <Stack maxW={"80%"} minH={["100vh", "container.sm"]} m={"auto"} p="0"
+            display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
+                <Container bgColor={"whiteAlpha.700"} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"} p={"2rem"} m={"2rem"} >
+
                     <form onSubmit={handleSubmit} >
-                        <Text fontSize={"2xl"} ml={"25%"} color={"blue.200"} fontWeight={"bold"} >Fill Your Details</Text>
+                        <Text fontSize={"2xl"} ml={"30%"} color={"blue.200"} fontWeight={"bold"} >Fill Your Details</Text>
                         <FormControl isRequired>
                             <FormLabel>Name</FormLabel>
                             <Input type='text' borderColor={"blue.200"} name="name" value={formData.name} onChange={handleChange} />
@@ -122,14 +126,14 @@ const Home = () => {
                             <FormLabel>Room No</FormLabel>
                             <Input type='text' borderColor={"blue.200"} name="roomNo" value={formData.roomNo} onChange={handleChange} />
                         </FormControl>
-                        <Button type="submit" bgColor={"blue.200"} mt={"5"} ml={"30%"} >Submit</Button>
-                        {/* <button type="submit" className="chakra-button" style={{ backgroundColor: "blue", marginTop: "5px" }}>Submit</button> */}
+                        <Button type="submit" bgColor={"blue.200"} mt={"5"} ml={"35%"} >Submit</Button>
                     </form>
-                </div>
-                <div>
+                </Container>
+
+                {/* <div>
                     HELLOO DOSTOOO !
-                </div>
-            </HStack>
+                </div> */}
+            </Stack>
         </Box>
     );
 };

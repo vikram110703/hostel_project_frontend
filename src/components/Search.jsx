@@ -6,17 +6,14 @@ import {
     Select,
     Button,
     Text,
+    Container,
 } from '@chakra-ui/react';
 import axios from 'axios';
 
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { redirect } from 'react-router-dom';
 import { server } from '../main';
-import { MatchedStudents } from './MatchedStudents';
-import { useNavigate, Link } from 'react-router-dom';
-
-
+import { useNavigate } from 'react-router-dom';
 
 
 const Search = () => {
@@ -70,9 +67,20 @@ const Search = () => {
 
 
     return (
-        <HStack minW={["container.xl", "container.sm"]} minH={"container.sm"} px={0.2} py={0.5} justifyContent={"center"}
-            alignItems={"center"} css={{ backgroundColor: "#C2D4E7" }}  >
-            <div style={{ backgroundColor: 'white', borderWidth: '1px', borderColor: 'none', borderRadius: "0.5rem", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", padding: '0.8rem', paddingInline: "1.5rem", maxWidth: "50%", minWidth: "40%" }}>
+        <Container maxW={"80%"} minH={["100vh", "container.sm"]} m={"auto"} p="0"
+            display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
+            css={{ backgroundColor: "#C2D4E7" }}
+        >
+            <Container bgColor={"whiteAlpha.700"} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"} p={"2rem"}
+                css={{
+                    "&:hover": {
+                        transform: "scale(1.1)"
+                    },
+                }
+                }
+            >
+                {/* <div style={{ backgroundColor: 'white', borderWidth: '1px', borderColor: 'none', borderRadius: "0.5rem", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", padding: '0.8rem', paddingInline: "1.5rem", maxWidth: "80%", minWidth:  }}> */}
+
                 <form onSubmit={handleSubmit} >
                     <Text fontSize={"2xl"} ml={["5%", "38%"]} color={"blue.200"} fontWeight={"bold"}> Find Your Friend </Text>
                     <FormControl isRequired>
@@ -105,8 +113,8 @@ const Search = () => {
                     </FormControl>
                     <Button type="submit" bgColor={"blue.200"} mt={"5"} ml={["20%", "42%"]}>Submit</Button>
                 </form>
-            </div>
-        </HStack>
+            </Container>
+        </Container>
     );
 };
 

@@ -9,6 +9,8 @@ import Home from "./components/Home";
 import Search from "./components/Search";
 import { MatchedStudents } from "./components/MatchedStudents";
 
+import './styles/app.scss';
+
 
 
 function App() {
