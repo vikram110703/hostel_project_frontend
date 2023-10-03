@@ -14,9 +14,11 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { server } from '../main';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from './Loader';
 
 
 const Search = () => {
+    const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState({
         name: '',
         enrollmentNo: '',
@@ -31,6 +33,10 @@ const Search = () => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
+
+    setTimeout(() => {
+        setLoading(false);
+    }, 1000);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -58,14 +64,13 @@ const Search = () => {
             });
 
             // Navigate to the '/matchedStudents' route and pass data using the 'state' object
-            navigate('/matchedStudents', { state: { matchedStudents: data } });
+            navigate('/matchedStudents', { state: { matchedStudents: data} });
         } catch (err) {
             toast.error(err.response.data.message);
         }
     };
 
-
-
+    if (loading) return <Loader />;
     return (
         <Container maxW={"80%"} minH={["100vh", "container.sm"]} m={"auto"} p="0"
             display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
@@ -82,7 +87,7 @@ const Search = () => {
                 {/* <div style={{ backgroundColor: 'white', borderWidth: '1px', borderColor: 'none', borderRadius: "0.5rem", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", padding: '0.8rem', paddingInline: "1.5rem", maxWidth: "80%", minWidth:  }}> */}
 
                 <form onSubmit={handleSubmit} >
-                    <Text fontSize={"2xl"} ml={["5%", "38%"]} color={"blue.200"} fontWeight={"bold"}> Find Your Friend </Text>
+                    <Text fontSize={"2xl"} ml={["5%", "36%"]} color={"blue.500"} fontWeight={"bold"}> Find Your Friend </Text>
                     <FormControl isRequired>
                         <FormLabel>Name</FormLabel>
                         <Input type='text' borderColor={"blue.200"} name="name" value={formData.name} onChange={handleChange} />
@@ -111,7 +116,7 @@ const Search = () => {
                             <option>Other</option>
                         </Select>
                     </FormControl>
-                    <Button type="submit" bgColor={"blue.200"} mt={"5"} ml={["20%", "42%"]}>Submit</Button>
+                    <Button type="submit" bgColor={"blue.400"} mt={"5"} ml={["20%", "42%"]}>Submit</Button>
                 </form>
             </Container>
         </Container>

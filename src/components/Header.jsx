@@ -3,11 +3,11 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 const Header = () => {
-  return <HStack p={"3"} gap={"5"} shadow={"base"} bgColor={"blue.200"} >
+  return <HStack p={"3"} ml="0" gap={"6"} shadow={"base"} bgColor={"blue.200"} >
 
     <Button variant="unstyled"
       color="blackAlpha.800"
-      fontSize={["1.3rem", "1.7rem"]}
+      fontSize={["1.2rem", "1.7rem"]} fontFamily={"heading"}
       sx={{
         position: 'relative', // Required for positioning the pseudo-element
         '&::after': {
@@ -26,12 +26,13 @@ const Header = () => {
           opacity: 1, // Show the underline on hover
         },
       }}
+      ml={"2"}
     >
       <Link to='/'>Home</Link>
     </Button>
     <Button variant="unstyled"
       color="blackAlpha.800"
-      fontSize={["1.3rem", "1.7rem"]}
+      fontSize={["1.3rem", "1.7rem"]} fontFamily={"heading"}
       sx={{
         position: 'relative', 
         '&::after': {

@@ -21,7 +21,7 @@ const Footer = () => {
         justifyContent="center" 
         m={"0"}
       >
-        <Text fontSize={["1.5rem", "1rem"]} letterSpacing="m" textAlign="center">
+        <Text fontSize={["0.85rem", "1.2rem"]} letterSpacing="m" textAlign="center">
           Made With ❤️ by  
           <Link
             href="https://github.com/vikram110703"
