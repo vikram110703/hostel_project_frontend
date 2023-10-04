@@ -7,14 +7,15 @@ import {
     Button,
     Text,
     Container,
+    Link,
 } from '@chakra-ui/react';
 import axios from 'axios';
 
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { server } from '../main';
-import { useNavigate } from 'react-router-dom';
-import { Loader } from './Loader';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { Loader } from './Loader'
 
 
 const Search = () => {
@@ -64,7 +65,7 @@ const Search = () => {
             });
 
             // Navigate to the '/matchedStudents' route and pass data using the 'state' object
-            navigate('/matchedStudents', { state: { matchedStudents: data} });
+            navigate('/matchedStudents', { state: { matchedStudents: data } });
         } catch (err) {
             toast.error(err.response.data.message);
         }
@@ -74,12 +75,12 @@ const Search = () => {
     return (
         <Container maxW={"80%"} minH={["100vh", "container.sm"]} m={"auto"} p="0"
             display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
-            css={{ backgroundColor: "#C2D4E7" }}
+            css={{ backgroundColor: "#C2D4E7" }} gap={"2rem"}
         >
-            <Container bgColor={"whiteAlpha.700"} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"} p={"2rem"}
+            <Container bgColor={"whiteAlpha.700"} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"} p={"2rem"} mt={["-5", "0"]}
                 css={{
                     "&:hover": {
-                        transform: "scale(1.1)"
+                        transform: "scale(1.07)"
                     },
                 }
                 }
@@ -88,7 +89,7 @@ const Search = () => {
 
                 <form onSubmit={handleSubmit} >
                     <Text fontSize={"2xl"} ml={["5%", "36%"]} color={"blue.500"} fontWeight={"bold"}> Find Your Friend </Text>
-                    <FormControl isRequired>
+                    <FormControl>
                         <FormLabel>Name</FormLabel>
                         <Input type='text' borderColor={"blue.200"} name="name" value={formData.name} onChange={handleChange} />
                     </FormControl>
@@ -119,6 +120,12 @@ const Search = () => {
                     <Button type="submit" bgColor={"blue.400"} mt={"5"} ml={["20%", "42%"]}>Submit</Button>
                 </form>
             </Container>
+
+            <Button colorScheme='red' variant='outline' bg={"blue.100"} mt={"2"} fontWeight={"bold"} onClick={() =>navigate('/allStudents') }>
+                Get All Students
+              
+            </Button>
+
         </Container>
     );
 };

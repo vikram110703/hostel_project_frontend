@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import { MatchedStudents } from "./components/MatchedStudents";
+import { AllStudents } from "./components/AllStudents";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/find" element={<Search />} />
         <Route path="/matchedStudents" element={<MatchedStudents />} />
+        <Route path="/allStudents" element={<AllStudents />} />
         <Route path="*" element={<Home />} />
       </Routes>
 

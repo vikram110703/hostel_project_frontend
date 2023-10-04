@@ -15,9 +15,11 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { server } from '../main';
 import toast from 'react-hot-toast';
+import { Loader } from './Loader';
 
 
 const Home = () => {
+    const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState({
         name: '',
         enrollmentNo: '',
@@ -73,15 +75,20 @@ const Home = () => {
         }
 
     };
+    setTimeout(() => {
+        setLoading(false);
+    }, 200);
+
+    if (loading) return <Loader />
 
     return (
         <Box bgColor="blue.200" css={{ backgroundColor: "#C2D4E7" }} minH={"container.sm"}>
             <Stack maxW={"80%"} minH={["100vh", "container.sm"]} m={"auto"} p="0"
-            display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
+                display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
                 <Container bgColor={"whiteAlpha.700"} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"} p={"4rem"} m={"2rem"} >
 
                     <form onSubmit={handleSubmit} >
-                        <Text fontSize={"2xl"}  ml={"30%"} color={"blue.200"} fontWeight={"bold"} >Fill Your Details</Text>
+                        <Text fontSize={"2xl"} ml={"30%"} color={"blue.200"} fontWeight={"bold"} >Fill Your Details</Text>
                         <FormControl isRequired>
                             <FormLabel>Name</FormLabel>
                             <Input type='text' borderColor={"blue.200"} name="name" value={formData.name} onChange={handleChange} />
