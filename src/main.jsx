@@ -5,7 +5,7 @@ import { ChakraProvider, theme } from "@chakra-ui/react"
 
 
 // export const server = "http://localhost:5000/api/v1";
-export const server = "https://hostel-project-backend.onrender.com/api/v1";
+export const server = "https://hostelprojectbackend-production.up.railway.app/api/v1";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

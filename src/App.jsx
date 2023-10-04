@@ -1,8 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-// import { useContext, useEffect } from "react";
-// import { server } from "./main";
-// import axios from "axios";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -10,11 +7,9 @@ import Search from "./components/Search";
 import { MatchedStudents } from "./components/MatchedStudents";
 
 
-
 function App() {
   return (
-
-    <Router >
+    <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,13 +26,10 @@ function App() {
             marginTop: '-2px'
           },
         }}
-
       />
       <Footer />
     </Router>
-
   );
 }
 
-
-export default App
+export default App;
