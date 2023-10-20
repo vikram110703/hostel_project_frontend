@@ -78,12 +78,12 @@ const StudentCard = ({ name, hostelName, block, roomNo, branch, state, year, enr
             <Avatar size={["md", "lg"]} name={name} src="url_to_avatar_image.jpg">
                 <AvatarBadge boxSize="1.25rem" bg="green.500" />
             </Avatar>
-            <Heading size={["sm", "md"]} color="blue.300" noOfLines={2} overflowWrap="break-word" wordWrap="break-word"  >
+            <Heading size={["sm", "md"]} mt={"1"} color="blue.300" noOfLines={2} overflowWrap="break-word" wordWrap="break-word"  >
                 {name.toUpperCase()}
             </Heading>
-            <Text fontSize={["lg", "xl"]} fontWeight={"medium"} noOfLines={1} overflowWrap="break-word" wordWrap="break-word" >Hostel : {hostelName}</Text>
-            <Text fontSize={["lg", "xl"]} fontWeight={"medium"} noOfLines={2} overflowWrap="break-word" wordWrap="break-word" >Block : {block}</Text>
-            <Text fontSize={["lg", "xl"]} fontWeight={"medium"} noOfLines={2} overflowWrap="break-word" wordWrap="break-word" >Room No : {roomNo}</Text>
+            <Text fontSize={["lg", "xl"]} fontWeight={"bold"} noOfLines={1} overflowWrap="break-word" wordWrap="break-word" >Hostel : {hostelName}</Text>
+            <Text fontSize={["lg", "xl"]} fontWeight={"bold"} noOfLines={2} overflowWrap="break-word" wordWrap="break-word" >Block : {block}</Text>
+            <Text fontSize={["lg", "xl"]} fontWeight={"bold"} noOfLines={2} overflowWrap="break-word" wordWrap="break-word" >Room No : {roomNo}</Text>
             <Text fontSize={["md", "xl"]} fontWeight={"medium"} noOfLines={2} overflowWrap="break-word" wordWrap="break-word" >Brnach : {branch || ''}</Text>
             <Text fontSize={["sm", "xl"]} fontWeight={"medium"} noOfLines={3} overflowWrap="break-word" wordWrap="break-word" >Enr. No : {enrollmentNo || ''}</Text>
             <Text fontSize={["md", "xl"]} fontWeight={"medium"} noOfLines={2} overflowWrap="break-word" wordWrap="break-word" >Year : {year || ''}</Text>

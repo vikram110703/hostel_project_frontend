@@ -21,14 +21,14 @@ import { Loader } from './Loader';
 const Home = () => {
     const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState({
-        name: '',
-        enrollmentNo: '',
-        state: '',
-        year: '',
-        branch: " ",
-        hostelName: '',
-        block: '',
-        roomNo: '',
+        name: "",
+        enrollmentNo: "",
+        state: "",
+        year: "",
+        branch: "",
+        hostelName: "",
+        block: "",
+        roomNo: "",
     });
 
     const handleChange = (e) => {
@@ -60,14 +60,14 @@ const Home = () => {
 
             toast.success(data.message);
             setFormData({
-                name: '',
-                enrollmentNo: '',
-                state: '',
-                year: '',
-                branch: '',
-                hostelName: '',
-                block: '',
-                roomNo: '',
+                name: "",
+                enrollmentNo: "",
+                state: "",
+                year: "",
+                branch: "",
+                hostelName: "",
+                block: "",
+                roomNo: "",
             });
 
         } catch (err) {
@@ -85,10 +85,10 @@ const Home = () => {
         <Box bgColor="blue.200" css={{ backgroundColor: "#C2D4E7" }} minH={"container.sm"}>
             <Stack maxW={"80%"} minH={["100vh", "container.sm"]} m={"auto"} p="0"
                 display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"}>
-                <Container bgColor={"whiteAlpha.700"} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"} p={["2rem","4rem"]} m={["1.5rem","2rem"]} >
+                <Container bgColor={"whiteAlpha.700"} shadow={"lg"} borderRadius={"lg"} transition={"all 0.3s"} p={["2rem", "4rem"]} m={["1.5rem", "2rem"]} >
 
                     <form onSubmit={handleSubmit} >
-                        <Text fontSize={"2xl"} ml={["20%","30%"]} color={"blue.200"} fontWeight={"bold"} >Fill Your Details</Text>
+                        <Text fontSize={"2xl"} ml={["20%", "30%"]} color={"blue.200"} fontWeight={"bold"} >Fill Your Details</Text>
                         <FormControl isRequired>
                             <FormLabel>Name</FormLabel>
                             <Input type='text' borderColor={"blue.200"} name="name" value={formData.name} onChange={handleChange} />
@@ -133,7 +133,7 @@ const Home = () => {
                             <FormLabel>Room No</FormLabel>
                             <Input type='text' borderColor={"blue.200"} name="roomNo" value={formData.roomNo} onChange={handleChange} />
                         </FormControl>
-                        <Button type="submit" bgColor={"blue.200"} mt={"5"} ml={["30%","35%"]} >Submit</Button>
+                        <Button type="submit" bgColor={"blue.200"} mt={"5"} ml={["30%", "35%"]} >Submit</Button>
                     </form>
                 </Container>
 
